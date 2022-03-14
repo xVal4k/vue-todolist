@@ -18,8 +18,6 @@ const root = new Vue ({
                 this.newTodo = '';
             }
         }, 
-        markDone(e) {
-            e.target.classList.toggle('actionDone');
-        }
+        
     }
 })
