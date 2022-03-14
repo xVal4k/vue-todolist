@@ -27,7 +27,7 @@
         <main>
             <ul class="todoList">
 
-                <li v-for="(element, index) in todos" @click="markDone" class="todoItem">
+                <li v-for="(element, index) in todos" @click="e => e.target.classList.toggle('actionDone')" class="todoItem">
                     <div>{{ element }}</div>
                     <button @click="deleteTodo(index)" class="btnDelete"><i class="fa-solid fa-xmark"></i></button>
                 </li>
