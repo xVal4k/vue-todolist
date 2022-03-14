@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Link Font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+
+    <div id="root">
+        <header>
+            <input v-model="newTodo" @keyup.enter="addTodo" type="text" name="addToDo" id="addToDo"
+                placeholder="Nuovo Todo" size="1">
+            <button @click="addTodo">Aggiungi</button>
+        </header>
+
+        <main>
+            <ul class="todoList">
+
+                <li v-for="(element, index) in todos" @click="markDone" class="todoItem">
+                    <div>{{ element }}</div>
+                    <button @click="deleteTodo(index)" class="btnDelete"><i class="fa-solid fa-xmark"></i></button>
+                </li>
+
+            </ul>
+        </main>
+
+    </div>
+
+    <!-- Scrip VueJs -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <!-- Script -->
+    <script src="script/script.js"></script>
+</body>
+
+</html>
